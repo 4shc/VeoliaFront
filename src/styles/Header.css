@@ -1,0 +1,118 @@
+.logo-capsule{
+  width: 100px;
+  position: absolute;
+
+}
+.iconUser{
+  width: 42px;
+}
+.navBar {
+  display: flex;
+  flex-direction: column; /* Cambiado a columna para mantener el efecto deseado */
+  align-content: space-around;
+  border-radius: 0; /* Ajustado para que no haya radio de borde en las esquinas */
+  box-sizing: border-box;
+  font-size: 1.5em;
+  margin-bottom: 14px;
+  width: 100%;
+  background: linear-gradient(90deg, #2c2c2c 0%, #9c9e9f 50%, #2c2c2c 100%);
+  position: fixed;
+  backdrop-filter: blur(9px);
+  min-height: 60px;
+  top: 0;
+  left: 0;
+  box-shadow: #313728 0 0 5px;
+  z-index: 987623;
+  animation: all 0.4s ease-in-out;
+  
+}
+.navBar_container{
+  display: inline-flex;
+  position: relative;
+  height: 40px;
+  top: 10px;
+  left: 3%;
+}
+
+.navBarContetUno {
+  background: none;
+  
+}
+
+.navBarContetDos {
+  box-shadow: none;
+  visibility: hidden;
+  font-size: 8px;
+  height: 13px;
+}
+
+.nav__toggle {
+  position: absolute;
+  cursor: pointer;
+  margin: 0 1.7rem;
+  top: 3px;
+  right: 0;
+  -webkit-transition: transform 0.5s 0.1s ease-in-out;
+  -moz-transition: transform 0.5s 0.1s ease-in-out;
+  -o-transition: transform 0.5s 0.1s ease-in-out;
+  transition: transform 0.5s 0.1s ease-in-out;
+}
+
+.nav__toggle:hover {
+  -webkit-transform: translateY(-5px) rotateY(-5deg);
+}
+
+.nav__toggle svg {
+  width: 2rem;
+  fill: #e71b24;
+  /*[fill] Permite cambiar el color al SVG*/
+}
+
+.nav__toggle .close {
+  display: none;
+  background: none;
+}
+
+.nav__toggle .close,
+.nav__toggle .menu {
+  margin-top: 0.3rem;
+}
+
+.nav__checkbox {
+  display: none;
+}
+
+.navBarContetUno {
+  display: none;
+}
+
+#nav__checkbox:checked ~ .navBarContetUno {
+  /*hace que a dar click en el checkbox se desplegue los li, que estaban con display none*/
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background: linear-gradient(53deg, #d9d1c8, #d9d1c8, #d9d1c8);
+  align-items: center;
+  margin: auto;
+  margin-top: 20px;
+  padding-top: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 0;
+}
+
+#nav__checkbox:checked ~ .navBarContetDos {
+  /*hace que a dar click en el checkbox se desplegué los li, que estaban con display none*/
+  visibility: visible;
+  font-size: 1em;
+}
+
+#nav__checkbox:checked ~ label.nav__toggle .close {
+  /*en este caso hace que se muestre el svg o icono de cerrar o close que esta con display none*/
+  display: block;
+}
+
+#nav__checkbox:checked ~ label.nav__toggle .menu {
+  /*oculta el svf o icono de la aburguesa para que solo se vea la x*/
+  display: none;
+}
